@@ -1,0 +1,19 @@
+.product{
+    position: relative;
+
+    width:244.91px;
+    height: 272px;
+    img{
+        width: 150px;
+        height: 200px;
+    }
+    p{
+        z-index: 2;
+    }
+    border: 4px solid black;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0);
+    transition: 1s;
+}
+.btn{
+    background-color: rgb(243, 98, 19);
+}
