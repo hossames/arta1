@@ -10,8 +10,8 @@ const Table_row = (props)=>{
 };
 export const Table=(props)=>{
     const B =()=>{
-        return props.table.map((item)=>(
-            <Table_row item={item}/>
+        return props.table.map((item,index)=>(
+            <Table_row key={index} item={item}/>
         ))
     }
     return(
