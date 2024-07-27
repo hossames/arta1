@@ -4,10 +4,28 @@ import {Footer} from "../components/footer"
 import { Contacts } from "../components/contacts"
 import './index.css'
 import '@/app/components/sideCatagories.css'
-import React, { use, useState } from "react"
+import React, { useEffect, useState } from "react"
 export default function Products(){
     let [copy,showCopy] = useState(false);
     const [result, setResult] = useState("");
+    const [lang, setLang] = useState(1);
+    const checkLang= () => {
+        if(typeof window === 'object'){
+            if(document.cookie.includes('lang')&&document.cookie.includes('0')){
+                setLang(0);
+                document.querySelector('header').dir='rtl'
+            }else if(document.cookie.includes('lang')){
+                setLang(1);
+                document.querySelector('header').dir='ltr'
+            }else{
+                document.cookie='lang=1'
+            }
+            console.log(document.cookie);
+        }
+    }
+    useEffect(() => {
+        checkLang()
+    }, []);
     const onSubmit = async (event) => {
         event.preventDefault();
         setResult("Sending....");
