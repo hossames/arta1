@@ -1,10 +1,9 @@
-'use client'
 export const HeaderData =[{
     Home:'الصفحة الرئيسية',
     Products:'المنتجات',
     Contact:'تواصل معنا',
     single_disc_machines:'ماكينات سنجل ديسك',
-    vacuum_cleaners: 'ماكينات شفط' ,
+    vaccum_cleaners: 'ماكينات شفط' ,
     scrubber_machines:'ماكينات غسيل و تجفيف',
     burnishers:'ماكينات تلميع الرخام',
     sweepers:'ماكينات كنس الطرق',
@@ -21,7 +20,7 @@ export const HeaderData =[{
     Products:'Products',
     Contact:'Contact Us',
     single_disc_machines:'single disc machines',
-    vacuum_cleaners: 'vacuum cleaners' ,
+    vaccum_cleaners: 'vaccum cleaners' ,
     scrubber_machines:'scrubber machines',
     burnishers:'burnishers',
     sweepers:'sweepers',
@@ -36,38 +35,237 @@ export const HeaderData =[{
 }
 ];
 
-export const CurrentLang={
-    currentLang: '1' // default language;
-}
-
 export const ProductsData=[
 {
-    id:'1',
+    id:'C-143-OLN-Wirbel',
     name:'C 143 OLN - Wirbel',
-    image:require('./assets/Wirbel-C-143.jpg'),
+    image:'/assets/Wirbel-C-143.jpg',
     description:'Single Disc Machine Description',
     catagory:"single-disc-machines",
-    specs:["",""],
+    specs:[
+        {
+            nameEn:'voltage',
+            nameAr:'الفولت',
+            value:'220[V]'
+        },{
+            nameEn:'frequency',
+            nameAr:'التردد',
+            value:'50[HZ]'
+        },{
+            nameEn:'motor',
+            nameAr:'الماتور',
+            value:'1100[watt] | 1.5[hp]'
+        },{
+            nameEn:'brush',
+            nameAr:'الفرشة',
+            value:'430[mm]'
+        },{
+            nameEn:'brush rpm',
+            nameAr:'سرعة الفرشة',
+            value:'150[rpm]'
+        },{
+            nameEn:'weight',
+            nameAr:'وزن',
+            value:'40[kg]'
+        },{
+            nameEn:'dimensions',
+            nameAr:'الابعاد',
+            value:'(560x430x1170)[mm]'
+        }
+    ]
 },{
-    id:'2',
+    id:'NR1500S-Numatic',
     name:'NR1500S - Numatic',
-    image:require('./assets/Numatic-NR1500S.jpg'),
+    image:'/assets/Numatic-NR1500S.jpg',
     description:'Single Disc Machine',
     catagory:"single-disc-machines",
-    specs:[" "],
+    specs:[
+        {
+            nameEn:'voltage',
+            nameAr:'الفولت',
+            value:'220[V]'
+        },{
+            nameEn:'frequency',
+            nameAr:'التردد',
+            value:'50[HZ]'
+        },{
+            nameEn:'motor',
+            nameAr:'الماتور',
+            value:'1500[watt] | 2[hp]'
+        },{
+            nameEn:'brush',
+            nameAr:'الفرشة',
+            value:'450[mm]'
+        },{
+            nameEn:'brush rpm',
+            nameAr:'سرعة الفرشة',
+            value:'150[rpm]'
+        },{
+            nameEn:'weight',
+            nameAr:'وزن',
+            value:'40[kg]'
+        },{
+            nameEn:'dimensions',
+            nameAr:'الابعاد',
+            value:'(460x580x1250)[mm]'
+        }
+    ]
 },{
-    id:'3',
+    id:'JOLLY-17-FIORENTINI',
     name:'JOLLY 17 – FIORENTINI',
-    image:require('./assets/fiorentini-jolly-17.jpg'),
-    description:'Single Disc Machine',
+    image:'/assets/fiorentini-jolly-17.jpg',
+    description:'موديل مخصص للمبتدئين بعرض عمل 430 مم، التركيبة الفعالة بين الموتور والوزن والسرعة، تجعل هذه الآلة مناسبة لأي مهمة تنظيف أو ترميم. موتور حثي قوي جداً لعمر طويل وأداء ممتاز. حماية مزدوجة ضد التشغيل غير المقصود. علبة تروس ساتلية وكوكبية لنقل قوة عالية، عمر طويل ومستوى ضجيج منخفض. قاعدة لتركيب الألواح والفرش. مقبض من الجيل الأخير، نتيجة تنسيق مثالي بين القوة الكبيرة، والراحة، والسلامة، والتصميم المبتكر.',
     catagory:"single-disc-machines",
-    specs:[""]
+    specs:[
+        {
+            nameEn:'voltage',
+            nameAr:'الفولت',
+            value:'220[V]'
+        },{
+            nameEn:'frequency',
+            nameAr:'التردد',
+            value:'50[HZ]'
+        },{
+            nameEn:'motor',
+            nameAr:'الماتور',
+            value:'1000[watt] | 1.34[hp]'
+        },{
+            nameEn:'brush',
+            nameAr:'الفرشة',
+            value:'430[mm]'
+        },{
+            nameEn:'brush rpm',
+            nameAr:'سرعة الفرشة',
+            value:'154[rpm]'
+        },{
+            nameEn:'Power supply cable',
+            nameAr:'كابل الطاقة',
+            value:'12[m]'
+        },{
+            nameEn:'weight',
+            nameAr:'وزن',
+            value:'41[kg]'
+        },{
+            nameEn:'dimensions',
+            nameAr:'الابعاد',
+            value:'(430x542x1200)[mm]'
+        }
+    ]
 },{
-    id:'4',
-    name:'JOLLY 17 – FIORENTINI',
-    image:require('./assets/fiorentini-jolly-17.jpg'),
-    description:'Single Disc Machine',
-    catagory:"vacuum-cleaners",
-    specs:[""]
-}
+    id:'mec-vaccum-',
+    name:'MEC-215',
+    image:'/assets/mec-215-vacuum-cleaner.jpg',
+    description:'موديل مخصص للمبتدئين بعرض عمل 430 مم، التركيبة الفعالة بين الموتور والوزن والسرعة، تجعل هذه الآلة مناسبة لأي مهمة تنظيف أو ترميم. موتور حثي قوي جداً لعمر طويل وأداء ممتاز. حماية مزدوجة ضد التشغيل غير المقصود. علبة تروس ساتلية وكوكبية لنقل قوة عالية، عمر طويل ومستوى ضجيج منخفض. قاعدة لتركيب الألواح والفرش. مقبض من الجيل الأخير، نتيجة تنسيق مثالي بين القوة الكبيرة، والراحة، والسلامة، والتصميم المبتكر.',
+    catagory:"vaccum-cleaners",
+    specs:[
+        {
+            nameEn:'voltage',
+            nameAr:'الفولت',
+            value:'220[V]'
+        },{
+            nameEn:'frequency',
+            nameAr:'التردد',
+            value:'50[HZ]'
+        },{
+            nameEn:'motor',
+            nameAr:'الماتور',
+            value:'1200[watt] | 1.65[hp]'
+        },{
+            nameEn:'capacity',
+            nameAr:'السعة',
+            value:'24[L]'
+        },{
+            nameEn:'Air flow',
+            nameAr:'انسياب الهواء',
+            value:'170[m^3/h]'
+        }
+    ]
+},{
+    id:'mec-vaccum-429',
+    name:'MEC-429',
+    image:'/assets/mec-429-vacuum-cleaner.jpg',
+    description:'موديل مخصص للمبتدئين بعرض عمل 430 مم، التركيبة الفعالة بين الموتور والوزن والسرعة، تجعل هذه الآلة مناسبة لأي مهمة تنظيف أو ترميم. موتور حثي قوي جداً لعمر طويل وأداء ممتاز. حماية مزدوجة ضد التشغيل غير المقصود. علبة تروس ساتلية وكوكبية لنقل قوة عالية، عمر طويل ومستوى ضجيج منخفض. قاعدة لتركيب الألواح والفرش. مقبض من الجيل الأخير، نتيجة تنسيق مثالي بين القوة الكبيرة، والراحة، والسلامة، والتصميم المبتكر.',
+    catagory:"vaccum-cleaners",
+    specs:[
+        {
+            nameEn:'voltage',
+            nameAr:'الفولت',
+            value:'220[V]'
+        },{
+            nameEn:'frequency',
+            nameAr:'التردد',
+            value:'50[HZ]'
+        },{
+            nameEn:'motor',
+            nameAr:'الماتور',
+            value:'2200[watt] | 3[hp]'
+        },{
+            nameEn:'capacity',
+            nameAr:'السعة',
+            value:'64[L]'
+        },{
+            nameEn:'Air flow',
+            nameAr:'انسياب الهواء',
+            value:'340[m^3/h]'
+        }
+    ]
+},{
+    id:'mec-vaccum-440',
+    name:'MEC-440',
+    image:'/assets/mec-440-vacuum-cleaner.jpg',
+    description:'موديل مخصص للمبتدئين بعرض عمل 430 مم، التركيبة الفعالة بين الموتور والوزن والسرعة، تجعل هذه الآلة مناسبة لأي مهمة تنظيف أو ترميم. موتور حثي قوي جداً لعمر طويل وأداء ممتاز. حماية مزدوجة ضد التشغيل غير المقصود. علبة تروس ساتلية وكوكبية لنقل قوة عالية، عمر طويل ومستوى ضجيج منخفض. قاعدة لتركيب الألواح والفرش. مقبض من الجيل الأخير، نتيجة تنسيق مثالي بين القوة الكبيرة، والراحة، والسلامة، والتصميم المبتكر.',
+    catagory:"vaccum-cleaners",
+    specs:[
+        {
+            nameEn:'voltage',
+            nameAr:'الفولت',
+            value:'220[V]'
+        },{
+            nameEn:'frequency',
+            nameAr:'التردد',
+            value:'50[HZ]'
+        },{
+            nameEn:'motor',
+            nameAr:'الماتور',
+            value:'3300[watt] | 4.42[hp]'
+        },{
+            nameEn:'capacity',
+            nameAr:'السعة',
+            value:'63[L]'
+        },{
+            nameEn:'Air flow',
+            nameAr:'انسياب الهواء',
+            value:'510[m^3/h]'
+        }
+    ]
+},{
+    id:'mec-vaccum-640',
+    name:'MEC-640',
+    image:'/assets/mec-640-vacuum-cleaner.jpg',
+    description:'موديل مخصص للمبتدئين بعرض عمل 430 مم، التركيبة الفعالة بين الموتور والوزن والسرعة، تجعل هذه الآلة مناسبة لأي مهمة تنظيف أو ترميم. موتور حثي قوي جداً لعمر طويل وأداء ممتاز. حماية مزدوجة ضد التشغيل غير المقصود. علبة تروس ساتلية وكوكبية لنقل قوة عالية، عمر طويل ومستوى ضجيج منخفض. قاعدة لتركيب الألواح والفرش. مقبض من الجيل الأخير، نتيجة تنسيق مثالي بين القوة الكبيرة، والراحة، والسلامة، والتصميم المبتكر.',
+    catagory:"vaccum-cleaners",
+    specs:[
+        {
+            nameEn:'voltage',
+            nameAr:'الفولت',
+            value:'220[V]'
+        },{
+            nameEn:'frequency',
+            nameAr:'التردد',
+            value:'50[HZ]'
+        },{
+            nameEn:'motor',
+            nameAr:'الماتور',
+            value:'3300[watt] | 4.42[hp]'
+        },{
+            nameEn:'capacity',
+            nameAr:'السعة',
+            value:'78[L]'
+        },{
+            nameEn:'Air flow',
+            nameAr:'انسياب الهواء',
+            value:'510[m^3/h]'
+        }
+    ]
+},
 ];

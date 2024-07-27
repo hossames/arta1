@@ -1,12 +1,25 @@
 'use client'
-import { HeaderData , CurrentLang } from "./data";
+import { HeaderData , CurrentLang } from "../data";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { useState , useEffect} from "react";
 export const Menu = () =>{
-    let lang = CurrentLang.currentLang;
+    const [lang, setLang] = useState(1);
+    const checkLang= () => {
+        if(typeof window === 'object'){
+            if(document.cookie.includes('lang')&&document.cookie.includes('0')){
+                setLang(0);
+                document.querySelector('header').dir='rtl'
+            }else{
+                setLang(1);
+                document.querySelector('header').dir='ltr'
+            }
+        }
+    }
+    useEffect(checkLang);
     return(
     <div className="drop flex flex-col gap-y-2 text-blue-300 mx-5 my-2 md:m-0">
         <a href="/products/single-disc-machines" className="menu-item"><span className="flex justify-between">{HeaderData[lang].single_disc_machines} <FaArrowRightLong/></span></a>
-        <a href="/products/vacuum-cleaners" className="menu-item"><span className="flex justify-between">{HeaderData[lang].vacuum_cleaners} <FaArrowRightLong/></span></a>
+        <a href="/products/vaccum-cleaners" className="menu-item"><span className="flex justify-between">{HeaderData[lang].vaccum_cleaners} <FaArrowRightLong/></span></a>
         <a href="/products/scrubber-machines" className="menu-item"><span className="flex justify-between">{HeaderData[lang].scrubber_machines} <FaArrowRightLong/></span></a>
         <a href="/products/burnishers" className="menu-item"><span className="flex justify-between">{HeaderData[lang].burnishers} <FaArrowRightLong/></span></a>
         <a href="/products/sweepers" className="menu-item"><span className="flex justify-between">{HeaderData[lang].sweepers} <FaArrowRightLong/></span></a>

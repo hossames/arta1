@@ -1,22 +1,29 @@
 'use client'
-import { Header } from "../header"
-import {Footer} from "../footer"
+import { Header } from "../components/header"
+import {Footer} from "../components/footer"
 import { ProductsData } from "../data"
-import { Contacts } from "../contacts"
+import { Contacts } from "../components/contacts"
 import { Product } from "./product"
-import '../sideCatagories.css'
-import {Menu} from "../sideCatagories"
-export default function Products(){
+import '@/app/components/sideCatagories.css'
+import {Menu} from "../components/sideCatagories"
+export default function Products(props:any){
     const ProductsCard=()=>{
         return ProductsData.map((item,index)=>(
-            <Product key={item.id} id={index} item={item}/>
+            <Product key={index} item={item}/>
         ))
+    }
+    function s() {
+        if(typeof window === 'object')
+        {
+            document.cookie ='lang=ar'
+            console.log(document.cookie);
+        }
     }
     return(
         <>
         <Header />
         <h1 className='text-2xl font-bold p-4 edit-text text-blue-300 mx-10 mt-2 text-center' style={{background: 'linear-gradient(180deg,#000,#2a2a2a)'}}><a href="/products">Products</a></h1>
-        <section className='flex items-start'style={{minHeight:'95vh'}}>
+        <section onClick={s} className='flex items-start'style={{minHeight:'95vh'}}>
             <div className="flex-col items-center hidden md:flex my-2 mr-2 ml-10">
             <Menu />
             </div>

@@ -1,14 +1,16 @@
 'use client'
-import { Header } from "../header"
-import {Footer} from "../footer"
-import { Contacts } from "../contacts"
+import { Header } from "../components/header"
+import {Footer} from "../components/footer"
+import { Contacts } from "../components/contacts"
 import './index.css'
-import '../sideCatagories.css'
+import '@/app/components/sideCatagories.css'
 import React, { use, useState } from "react"
 export default function Products(){
     let [copy,showCopy] = useState(false);
+    const [result, setResult] = useState("");
     const onSubmit = async (event) => {
         event.preventDefault();
+        setResult("Sending....");
         const formData = new FormData(event.target);
         formData.append("access_key", "0cc71050-e982-4b94-a141-61f32b4d27cb");
         const response = await fetch("https://api.web3forms.com/submit", {
@@ -16,6 +18,13 @@ export default function Products(){
             body: formData
         });
         const data = await response.json();
+        if (data.success) {
+            setResult("Form Submitted Successfully");
+            event.target.reset();
+        } else {
+            console.log("Error", data);
+            setResult(data.message);
+        }
     };
     function show(){
         console.log(1);
@@ -27,7 +36,7 @@ export default function Products(){
     }
     const Copied = () => {
         return(
-            <div className=" uppercase fixed bottom-2 px-5 py-2 text-xl rounded-3xl text-white left-1/2" style={{backgroundColor: 'rgb(255, 95, 9)'}}>
+            <div className=" uppercase fixed bottom-2 px-5 py-2 text-xl rounded-3xl text-white " style={{background: 'linear-gradient(90deg, rgba(147, 195, 243, 1) 0%, rgba(49, 97, 222, 1) 100%)', left:'calc(50%)'}}>
                 copied
             </div>
         )
@@ -59,7 +68,7 @@ export default function Products(){
             OR
         </div>
         <div className="m-10 font-semibold flex flex-col justify-center items-center gap-y-1 md:flex-row">
-            contact with us phone or whatsapp <span className=" font-semibold inline-block p-2 mx-2 select-none text-white  cursor-pointer duration-500 hover:scale-110" onClick={()=>(show())} style={{backgroundColor: 'rgb(255, 95, 9)'}}> 01098676589</span>
+            contact with us phone or whatsapp <span className=" font-semibold inline-block p-2 mx-2 select-none text-white  cursor-pointer duration-500 hover:scale-110" onClick={()=>(show())} style={{background: ' linear-gradient(90deg, rgba(147, 195, 243, 1) 0%, rgba(49, 97, 222, 1) 100%)'}}> 01098676589</span>
         </div>
         </section>
         {copy?<Copied/>:''}

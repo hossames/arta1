@@ -1,7 +1,7 @@
 'use client';
 import { MdKeyboardArrowDown   } from "react-icons/md";
 import { RiMenu3Line , RiCloseLine } from "react-icons/ri";
-import { HeaderData , CurrentLang } from "./data";
+import { HeaderData  } from "../data";
 import { useState } from "react";
 import { Menu } from "./sideCatagories";
 import { useEffect } from "react";
@@ -25,7 +25,7 @@ const SideBar = (props) => {
     const {lang} = props;
     return(
         <>
-        <div className=' side flex gap-1 text-xl font-medium text-blue-300'>
+        <div dir='ltr' className=' side flex gap-1 text-xl font-medium text-blue-300'>
                 <a href="/" id ='home' className="p-3 nav-item nav-underline">{HeaderData[lang].Home}</a>
                 <div href="/products"  className="">
                     <span className="nav-underline p-3 flex items-center gap-1">
@@ -40,8 +40,30 @@ const SideBar = (props) => {
     )
 }
 export const Header = ()=>{
-    const [lang, setLang] = useState(CurrentLang.currentLang);
+    const [lang, setLang] = useState(1);
     const [showMenu,setShowMenu]=useState(false);
+    function deleteAllCookies() {
+        var allCookies = document.cookie.split(';'); 
+        for (var i = 0; i < allCookies.length; i++) 
+            document.cookie = allCookies[i] + "=;expires=" 
+            + new Date(0).toUTCString(); 
+    }
+    const checkLang= () => {
+        if(typeof window === 'object'){
+            if(document.cookie.includes('lang')&&document.cookie.includes('0')){
+                setLang(0);
+                document.querySelector('header').dir='rtl'
+            }else if(document.cookie.includes('lang')){
+                setLang(1);
+                document.querySelector('header').dir='ltr'
+            }else{
+                document.cookie='lang=1'
+            }
+            console.log(document.cookie);
+        }
+    }
+
+    
     const check=()=>{
         if(typeof window === 'object'){
             if(window.location.href.includes('products')){
@@ -61,14 +83,16 @@ export const Header = ()=>{
             }
         }
     }
+    useEffect(checkLang);
     useEffect(check);
     return(
+        <>
         <header id="header" className=" flex justify-between py-4 px-10 box-border items-center" style={{background: 'linear-gradient(360deg,#000,#2a2a2a)'}}>
             <a href="/" className="p-3 logo text-2xl uppercase font-semibold text-blue-300">Arta</a>
             <Nav lang={lang}/>
             <nav className="language-select text-xl font-medium text-blue-300 list-none flex gap-3">
-                <li  onClick={()=>{setLang(1)}}>en</li>
-                <li onClick={()=>{setLang(0)}}>ar</li>
+                <li  onClick={()=>{deleteAllCookies();document.cookie='lang=1';location.reload()}}>en</li>
+                <li onClick={()=>{deleteAllCookies();document.cookie='lang=0';location.reload()}}>ar</li>
             </nav>
             {
                 showMenu?
@@ -94,5 +118,6 @@ export const Header = ()=>{
             }}/>
         }
         </header>
+        </>
     )
 }

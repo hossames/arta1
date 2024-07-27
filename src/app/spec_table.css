@@ -1,0 +1,50 @@
+table{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    tbody{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        tr{
+            display: flex;
+            margin-top: 5px;
+            border: 1px solid black;
+        }
+        td{
+            display: flex;
+            background-color: rgb(232, 232, 232);
+            font-size: 0.8rem;
+            font-weight: 400;
+            padding:0.5rem 0;
+            justify-content: center;
+            width: calc(100%/3);
+        }
+    }
+    animation: sSlide 1s;
+}
+@media (max-width: 1024px) {
+    tbody{
+        width: 90% !important ;
+        td{
+            font-size: 0.7rem !important;
+        }
+    }
+}
+@media (max-width: 768px) {
+    tbody{
+        width: 90% !important ;
+        td{
+            font-size: 0.65rem !important;
+        }
+    }
+}
+
+@keyframes sSlide {
+    0%{
+        transform: translate(-100%);
+    }
+    100%{
+        transform: translate(0);
+    }
+}

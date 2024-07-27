@@ -1,16 +1,16 @@
 'use client'
 import { ProductsData } from "@/app/data"
-import {Header} from '@/app/header';
-import {Footer}from'@/app/footer'
-import { Contacts } from '@/app/contacts'
+import {Header} from '@/app/components/header';
+import {Footer}from'@/app/components/footer'
+import { Contacts } from '@/app/components/contacts'
 import {Product} from '@/app/products/product'
-import {Menu} from "../../sideCatagories"
+import {Menu} from "../../components/sideCatagories"
 import { useEffect } from "react";
-import '../../sideCatagories.css'
+import '@/app/components/sideCatagories.css'
 export default function ProductCatagoriesPage(props){
     const ProductsCard=()=>{
         return ProductsData.filter(product=>product.catagory === props.params.catagory).map((item,index)=>(
-            <Product key={item.id} id={index} item={item}/>
+            <Product key={index} item={item}/>
         ))
     }
     const check=()=>{

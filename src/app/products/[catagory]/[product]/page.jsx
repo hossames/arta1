@@ -1,22 +1,37 @@
 'use client'
-import { ProductsData } from "@/app/data"
-import {Header} from '@/app/header';
-import {Footer}from'@/app/footer'
-import { Contacts } from '@/app/contacts'
-import {Product} from '@/app/products/product'
-import '../../../sideCatagories.css'
+import { ProductsData } from "../../../data"
+import {Header} from '@/app/components/header';
+import {Footer}from'@/app/components/footer'
+import { Contacts } from '@/app/components/contacts'
+import Image from "next/image";
+import '@/app/components/sideCatagories.css'
+import { Table } from '@/app/spec_table'
+import './productPage.css'
+import '@/app/products/product.css'
+import { use, useState } from "react";
 export default function ProductPage(props){
-    let productOfThatPage = ProductsData.filter(product=>product.id === props.params.product);
-    const ProductCard=()=>{
-        return productOfThatPage.map((item,index)=>(
-            <Product key={item.id} id={index} item={item}/>
-        ))
-    }
+    let item = ProductsData.filter(product=>product.id === props.params.product)[0];
+    console.log(ProductsData);
+    let [overview,setoverview] = useState(0);
     return(
         <>
         <Header />
-        <section className='flex items-start'style={{minHeight:'95vh'}}>
-            <ProductCard/>
+        <section className='productPage flex justify-center items-center flex-col'style={{minHeight:'95vh'}}>
+        <div className="productPageImage">
+        <img  className='' alt='ادوات نظافة و توريدات' src={item.image}/>
+        <h1>{item.name}</h1>
+        </div>
+        <div>
+            <button onClick={()=>setoverview(0)} style={{width:112}}className="btn py-2 px-4 rounded-xl duration-700 hover:scale-110 text-white">discription</button>
+            <button onClick={()=>setoverview(1)} style={{width:112}} className="btn py-2 px-4 ml-4 rounded-xl duration-700 hover:scale-110 text-white">specs</button>
+        </div>
+        {
+            overview?<Table table={item.specs}></Table>:
+            <p dir='rtl' className=" my-10 text-center p-4 text alexandria-600 text-x text-gray-400" style={{fontFamily:' sans-serif'}}>
+            <span className="block text-gray-900 font-semibold my-4">{item.name}</span>
+            {item.description}
+            </p>
+        }
         </section>
         <Footer />
         <Contacts />

@@ -1,0 +1,50 @@
+.productPage{
+    img{
+        width: 40%;
+        height: 400px;
+        
+    }
+}
+.productPageImage{
+    display: flex;
+    width: 60%;
+    h1{
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+    }
+}
+.text{
+    font-size: 1.3rem;
+    width: 550px;
+    animation: sSlide 1s;
+}
+
+@media (max-width: 1024px) {
+    .productPageImage{
+        width: 100% !important ;
+    }
+}
+
+@media (max-width: 768px) {
+    .productPageImage{
+        h1{
+            font-size: 1.1rem;
+        }
+    }
+    .text{
+        width: 90%;
+    }
+}
+
+
+@keyframes sSlide {
+    0%{
+        transform: translate(-100%);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
