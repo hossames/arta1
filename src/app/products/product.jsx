@@ -4,7 +4,6 @@ import './product.css'
 import Link from 'next/link'
 export const Product = (props)=>{
     const {item} = props;
-
     return(
         <div className="  product flex flex-col p-4 my-4 items-center mx-2">
             <img  className='' alt='ادوات نظافة و توريدات' src={item.image}/>

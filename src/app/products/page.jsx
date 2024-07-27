@@ -1,16 +1,15 @@
 'use client'
-import { ProductsData } from "@/app/data"
-import {Header} from '@/app/components/header';
-import {Footer}from'@/app/components/footer'
-import { Contacts } from '@/app/components/contacts'
-import {Product} from '@/app/products/product'
-import {Menu} from "../../components/sideCatagories"
-import { useEffect } from "react";
+import { Header } from "../components/header"
+import {Footer} from "../components/footer"
+import { ProductsData , HeaderData} from "../data"
+import { Contacts } from "../components/contacts"
+import { Product } from "./product"
 import '@/app/components/sideCatagories.css'
-import { HeaderData } from "../../data";
-export default function ProductCatagoriesPage(props){
+import {useState,useEffect} from 'react'
+import {Menu} from "../components/sideCatagories"
+export default function Products(props){
     const ProductsCard=()=>{
-        return ProductsData.filter(product=>product.catagory === props.params.catagory).map((item,index)=>(
+        return ProductsData.map((item,index)=>(
             <Product key={index} item={item}/>
         ))
     }
@@ -32,22 +31,6 @@ export default function ProductCatagoriesPage(props){
     useEffect(() => {
         checkLang()
     }, []);
-    const check=()=>{
-    if(typeof window === 'object'){
-        var links=document.querySelectorAll('.menu-item');
-        links.forEach(lnk => {
-            var urlString=lnk.getAttribute('href');
-            if(urlString.includes(props.params.catagory)){
-                lnk.style.transform="scale(1.1)" ;
-                lnk.style.color= 'white'
-            }
-            else{
-                lnk.style.transform="" ;
-            }
-        
-        })
-    }}
-    useEffect(check);
     return(
         <>
         <Header />
