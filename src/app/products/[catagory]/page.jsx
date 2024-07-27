@@ -5,7 +5,7 @@ import {Footer}from'@/app/components/footer'
 import { Contacts } from '@/app/components/contacts'
 import {Product} from '@/app/products/product'
 import {Menu} from "../../components/sideCatagories"
-import { useEffect } from "react";
+import { useEffect , useState} from "react";
 import '@/app/components/sideCatagories.css'
 import { HeaderData } from "../../data";
 export default function ProductCatagoriesPage(props){
