@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image'
 import './product.css'
 import Link from 'next/link'
 export const Product = (props)=>{

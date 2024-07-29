@@ -1,3 +1,4 @@
+'use client'
 export const HeaderData =[{
     Home:'الصفحة الرئيسية',
     Products:'المنتجات',
@@ -269,3 +270,4 @@ export const ProductsData=[
     ]
 },
 ];
+
