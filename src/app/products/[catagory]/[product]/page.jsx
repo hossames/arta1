@@ -1,3 +1,4 @@
+'use client'
 import ProductPage from '@/app/productpages/product'
 import axios from 'axios';
 const fetching = async() =>{
