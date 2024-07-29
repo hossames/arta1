@@ -28,7 +28,7 @@ export default function ProductPage(props){
             overview?<Table table={item.specs}></Table>:
             <p dir='rtl' className=" my-10 text-center p-4 text alexandria-600 text-x text-gray-400" style={{fontFamily:' sans-serif'}}>
             <span className="block text-gray-900 font-semibold my-4">{item.name}</span>
-            {item.description}
+            {item.discription}
             </p>
         }
         </section>
