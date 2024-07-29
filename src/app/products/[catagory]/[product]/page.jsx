@@ -1,4 +1,3 @@
-'use client'
 import ProductPage from '@/app/productpages/product'
 import axios from 'axios';
 const fetching = async() =>{
@@ -8,6 +7,7 @@ const fetching = async() =>{
 
 export default async function Home(props) {
     const data = await fetching();
+    console.log(data);
     return (
         <ProductPage data={data} params={props.params}/>
     )

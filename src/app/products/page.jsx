@@ -1,4 +1,3 @@
-'use client'
 import Products from '../productpages/ProductPage';
 import axios from 'axios';
 const fetching = async() =>{
@@ -8,6 +7,7 @@ const fetching = async() =>{
 
 export default async function Home() {
     const data = await fetching();
+    console.log(data)
     return (
         <Products data={data}/>
     )
