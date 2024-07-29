@@ -1,14 +1,16 @@
+'use client'
 import ProductCatagoriesPage from "../../productpages/catagory";
 import axios from 'axios';
-const fetching = async() =>{
-    const data = await axios.get("https://server-1kfi.vercel.app/product");
-    return data.data;
+import {useEffect,useState} from 'react'
+const fetching = () =>{
+    const data = axios.get("https://server-1kfi.vercel.app/product").then((response) =>response.data);
+    return data;
 }
 
-export default async function Home(props) {
-    const data = await fetching();
-    console.log(data)
-    return (
-        <ProductCatagoriesPage data={data} params={props.params}/>
-    )
+export default function Home(props) {
+    let [d,setdata] = useState([]);
+    useEffect(() => {
+        fetching().then(data => setdata(data));
+    }, [])
+    return <ProductCatagoriesPage data={d} params={props.params}/>
 }
