@@ -12,7 +12,7 @@ export const Pages = (props) => {
     }
     return (
         <div className="w-1/4 flex justify-between">
-            <GrPrevious onClick={prev()} />
+            <a onClick={prev()} href={ `./?${currentPage}`}><GrPrevious/></a>
             <GrNext onClick={next()} />
         </div>
     )

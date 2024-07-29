@@ -9,6 +9,7 @@ import {useState,useEffect} from 'react'
 import {Menu} from "../components/sideCatagories"
 export default function Products(props){
     const ProductsData=props.data;
+    console.log(ProductsData);
     const [lang, setLang] = useState(1);
     const ProductsCard=()=>{
         return ProductsData.map((item,index)=>(

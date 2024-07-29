@@ -9,7 +9,7 @@ import '@/app/components/sideCatagories.css'
 import { HeaderData } from "@/app/data";
 export default function ProductCatagoriesPage(props){
     const ProductsData=props.data;
-    console.log(ProductsData[0].catagory,props.params.catagory);
+    console.log(ProductsData);
     const ProductsCard=()=>{
         return ProductsData.filter(product=>product.catagory === props.params.catagory).map((item,index)=>(
             <Product key={index} item={item}/>

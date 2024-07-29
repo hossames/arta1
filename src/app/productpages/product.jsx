@@ -10,6 +10,8 @@ import '@/app/products/product.css'
 import { useState } from "react";
 export default function ProductPage(props){
     let ProductsData = props.data;
+    console.log(ProductsData);
+
     let item = ProductsData.filter(product=>product.id === props.params.product)[0];
     let [overview,setoverview] = useState(0);
     return(
