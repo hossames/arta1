@@ -10,7 +10,6 @@ import {Menu} from "../components/sideCatagories"
 export default function Products(props){
     const ProductsData=props.data;
     const [lang, setLang] = useState(1);
-    console.log(ProductsData);
     const ProductsCard=()=>{
         return ProductsData.map((item,index)=>(
             <Product key={index} item={item}/>

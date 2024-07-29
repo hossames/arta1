@@ -62,8 +62,6 @@ export const Header = ()=>{
             console.log(document.cookie);
         }
     }
-
-    
     const check=()=>{
         if(typeof window === 'object'){
             if(window.location.href.includes('products')){
