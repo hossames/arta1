@@ -13,7 +13,7 @@ export default function Home(props) {
         fetching().then(data => setdata(data));
     }, [])
     if(d[0]!=='empty')
-    return <ProductCatagoriesPage params={props.params} data ={d} current={parseInt(props.searchParams.currentPage)} num = {parseInt(d.length/12)}/>;
+    return <ProductCatagoriesPage params={props.params} data ={d} current={parseInt(props.searchParams.currentPage)} num = {parseInt(d.length/13)}/>;
     else{
         return <img src="/assets/03-42-11-849_512.webp" width={'200px'} height={'200px'} style={{
             position: 'absolute',

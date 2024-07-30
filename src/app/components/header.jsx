@@ -27,7 +27,7 @@ const SideBar = (props) => {
         <>
         <div dir='ltr' className=' side flex gap-1 text-xl font-medium text-blue-300'>
                 <a href="/" id ='home' className="p-3 nav-item nav-underline">{HeaderData[lang].Home}</a>
-                <div href="/products?currentPage=0"  className="">
+                <div className="">
                     <span className="nav-underline p-3 flex items-center gap-1">
                         <a href="/products?currentPage=0" id ='products'>{HeaderData[lang].Products}</a>
                         <MdKeyboardArrowDown onClick={()=>change(!current)}  className=" text-2xl"/>

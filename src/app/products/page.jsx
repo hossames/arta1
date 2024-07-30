@@ -13,7 +13,7 @@ export default function Home(props) {
     }, [])
     console.log(props.searchParams.currentPage);
     if(d[0]!=='empty')
-    return <Products data ={d} current={parseInt(props.searchParams.currentPage)} num = {parseInt(d.length/12)}/>;
+    return <Products data ={d} current={parseInt(props.searchParams.currentPage)} num = {parseInt(d.length/13)}/>;
     else{
         return <img src="/assets/03-42-11-849_512.webp" width={'200px'} height={'200px'} style={{
             position: 'absolute',
