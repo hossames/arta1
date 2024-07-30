@@ -29,7 +29,7 @@ const SideBar = (props) => {
                 <a href="/" id ='home' className="p-3 nav-item nav-underline">{HeaderData[lang].Home}</a>
                 <div href="/products?currentPage=0"  className="">
                     <span className="nav-underline p-3 flex items-center gap-1">
-                        <a href="/products" id ='products'>{HeaderData[lang].Products}</a>
+                        <a href="/products?currentPage=0" id ='products'>{HeaderData[lang].Products}</a>
                         <MdKeyboardArrowDown onClick={()=>change(!current)}  className=" text-2xl"/>
                     </span>
                     {current?<Menu/>:''}
