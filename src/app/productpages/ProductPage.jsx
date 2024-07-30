@@ -10,8 +10,7 @@ import {useState,useEffect} from 'react'
 import {Menu} from "../components/sideCatagories"
 export default function Products(props){
     const ProductsData=props.data;
-    const products = ProductsData.slice(props.current*12,Math.min(props.current*12+12,ProductsData.length))
-    console.log(props.current);
+    const products = ProductsData.slice(props.current*12,Math.min(props.current*12+12,ProductsData.length));
     const [lang, setLang] = useState(1);
     const ProductsCard=()=>{
         return products.map((item,index)=>(

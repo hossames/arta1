@@ -11,6 +11,7 @@ export default function Home(props) {
     useEffect(() => {
         fetching().then(data => setdata(data));
     }, [])
+    console.log(props.searchParams.currentPage);
     if(d[0]!=='empty')
     return <Products data ={d} current={parseInt(props.searchParams.currentPage)} num = {parseInt(d.length/12)}/>;
     else{
