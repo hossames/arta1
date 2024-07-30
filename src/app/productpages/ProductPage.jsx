@@ -11,7 +11,7 @@ import {Menu} from "../components/sideCatagories"
 export default function Products(props){
     const ProductsData=props.data;
     const products = ProductsData.slice(props.current*12,Math.min(props.current*12+12,ProductsData.length))
-    console.log(products);
+    console.log(ProductsData);
     const [lang, setLang] = useState(1);
     const ProductsCard=()=>{
         return products.map((item,index)=>(
