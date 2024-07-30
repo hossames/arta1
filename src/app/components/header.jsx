@@ -12,7 +12,7 @@ const Nav =(props)=>{
     <>
     <nav className='links-Continer flex gap-1 text-xl font-medium text-blue-300'>
             <a href="/" id ='home' className="p-3 nav-item nav-underline">{HeaderData[lang].Home}</a>
-            <a href='/products' id='products' className="p-3 nav-item nav-underline">
+            <a href='/products?currentPage=0' id='products' className="p-3 nav-item nav-underline">
                 {HeaderData[lang].Products}
             </a>
             <a href="/contact" id = 'contact' className="p-3 nav-item nav-underline">{HeaderData[lang].Contact}</a>

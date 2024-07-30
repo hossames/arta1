@@ -5,12 +5,14 @@ import { Contacts } from '@/app/components/contacts'
 import {Product} from '@/app/products/product'
 import {Menu} from "@/app/components/sideCatagories"
 import { useEffect , useState} from "react";
+import { Pages } from '../components/pages';
 import '@/app/components/sideCatagories.css'
 import { HeaderData } from "@/app/data";
 export default function ProductCatagoriesPage(props){
     const ProductsData=props.data;
+    const products = ProductsData.slice(props.current*12,Math.min(props.current*12+12,ProductsData.length))
     const ProductsCard=()=>{
-        return ProductsData.filter(product=>product.catagory === props.params.catagory).map((item,index)=>(
+        return products.filter(product=>product.catagory === props.params.catagory).map((item,index)=>(
             <Product key={index} item={item}/>
         ))
     }
@@ -51,7 +53,7 @@ export default function ProductCatagoriesPage(props){
     return(
         <>
         <Header />
-        <h1 className='text-2xl font-bold p-4 edit-text text-blue-300 mx-10 mt-2 text-center' style={{background: 'linear-gradient(180deg,#000,#2a2a2a)'}}><a href="/products">{HeaderData[lang].Products}</a></h1>
+        <h1 className='text-2xl font-bold p-4 edit-text text-blue-300 mx-10 mt-2 text-center' style={{background: 'linear-gradient(180deg,#000,#2a2a2a)'}}><a href="/products?currentPage=0">{HeaderData[lang].Products}</a></h1>
         <section className='flex items-start justify-center md:justify-normal 'style={{minHeight:'95vh'}}>
             <div className="flex-col items-center hidden md:flex my-2 mr-2 ml-10">
             <Menu />
@@ -60,6 +62,7 @@ export default function ProductCatagoriesPage(props){
             <ProductsCard/>
             </div>
         </section>
+        <Pages currentPage={props.current} num={props.num}/>
         <Footer />
         <Contacts />
         </>
